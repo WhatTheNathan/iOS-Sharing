@@ -504,9 +504,9 @@ extension ViewController: UITextFieldDelegate {
 * Model(模型)
 
   *  数据层
-  * what the app is，but not how it is displayed
-  * kinda like algorithms and data structure
-  * 与UI无关
+  *  what the app is，but not how it is displayed
+  *  kinda like algorithms and data structure
+  *  与UI无关
 
 * Controller(控制器)
 
@@ -523,7 +523,7 @@ extension ViewController: UITextFieldDelegate {
 
   * View与Model之间相互独立，只能通过Controller来相互联系
 
-  ![Screen Shot 2017-12-07 at 9.38.20 PM](/Users/Rmbp_Nathan/Documents/Blog/source/_posts/小猴偷米iOS开发技术分享/Screen Shot 2017-12-07 at 9.38.20 PM.png)
+  ![](images/image_1.jpg)
 
 **在iOS实际开发中，Controller很难和View做到相互独立，经常耦合在一起，即使你可以将一些业务逻辑和数据转换的工作交给Model，但是你无法将负担分给View，因为View本质还是重用的视图，以及将用户的操作行为交给Controller来处理，于是Controller成为了所有东西的delegate和datasource，还要负责网络请求逻辑……..**
 
@@ -559,7 +559,7 @@ extension ViewController: UITextFieldDelegate {
 
 * pod install
 
-![Screen Shot 2017-12-03 at 3.35.07 PM](/Users/Rmbp_Nathan/Documents/Blog/source/_posts/小猴偷米iOS开发技术分享/Screen Shot 2017-12-03 at 3.35.07 PM.png)
+![](images/image_2.jpg)
 
 * 打开demo.xcworkspace
 
@@ -569,13 +569,13 @@ extension ViewController: UITextFieldDelegate {
 
 * 分为Dynamic和Static
 
-  ![Screen Shot 2017-12-07 at 10.27.51 PM](/Users/Rmbp_Nathan/Documents/Blog/source/_posts/小猴偷米iOS开发技术分享/Screen Shot 2017-12-07 at 10.27.51 PM.png)
+  ![](images/image_3.jpg)
 
 * tableView是由section组成的，每一个section可以拥有一个header和一个footer，和多行rows。
 
 * 每一个row的原型是cell，即tableview以cell为模板，通过复用来构造整个tableview
 
-  ![Screen Shot 2017-12-07 at 10.28.18 PM](/Users/Rmbp_Nathan/Documents/Blog/source/_posts/小猴偷米iOS开发技术分享/Screen Shot 2017-12-07 at 10.28.18 PM.png)
+  ![](images/image_4.jpg)
 
 ##### 关联代码与TableView
 
