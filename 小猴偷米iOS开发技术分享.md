@@ -17,7 +17,9 @@ categories: iOS开发
 >
 > 当然也是和有移动端开发经验的同学们一起交流。最后也会给出我在2017年底这时候，对真正想学习iOS开发的同学的一点入门建议。
 
-## What's in iOS？
+<!--more-->
+
+# What's in iOS？
 
 **Core OS**
 
@@ -40,7 +42,7 @@ categories: iOS开发
 * 一整套完整的框架，包括最核心的Foundation和UIKit，其通过对视图层的控件以及其功能的面向对象封装来提供良好的开发环境，是iOS开发唯一的框架，在macOS开发中称作Cocoa。
 * 因前身是被苹果公司收购的NeXT公司用Objective-C语言开发的多媒体系统NeXTSTEP的核心软件框架，因此Cocoa框架中的类都有着NS的前缀。
 
-## 开发环境
+# 开发环境
 
 **IDE:** **Xcode9** or AppCode
 
@@ -61,9 +63,9 @@ categories: iOS开发
 * 苹果官方主推MVC，从ViewController的命名上看，心中就已经有🅱🌲了。
 * 目前潮流以及大势是MVVM。
 
-## Swift编程语言
+# Swift编程语言
 
-#### 概述
+## 概述
 
 * 于2014年WWDC发布，2016年发布Swift3.0后语法开始趋于稳定，最新为Swift4.0。
 
@@ -81,9 +83,9 @@ categories: iOS开发
 
 * Swift对于函数式编程和流式编程拥有原生的支持，使用->符号来支持函数和闭包，map、flapmap、filter等内置函数等。目前流行的语言对函数式编程的支持都很强，**函数式响应式(Functional Reactive Programming)**的编程思想在前端、移动端已经越来越流行。
 
-### demo所用到的Swift简单语法特性介绍
+## demo所用到的Swift简单语法特性介绍
 
-#### Constants and Variables
+### Constants and Variables
 
 * 使用关键词**let**来声明常量。
 * 使用关键词**var**来声明变量。
@@ -93,7 +95,7 @@ let maximunNumberOfLoginAttempts = 10
 var currentLoginAttempt = 0
 ```
 
-#### Type Annotations
+### Type Annotations
 
 * 使用类型注释在声明常量或变量时去确定其类型。
 
@@ -113,7 +115,7 @@ var welcomeMessage
 
 * 因为类型推断的存在，在实际代码编写中很少去写类型注释。
 
-#### Print & Comments
+### Print & Comments
 
 * Swift使用字符串插入，即先对字符串中插入占位符(常量或变量)，再用其的值去替代。
 
@@ -125,12 +127,12 @@ print("Hello \(text)")
 
 * Swift的注释支持嵌套
 
-#### *Optional(可选类型)
+### *Optional(可选类型)
 
 * Optional是Swift语言非常非常非常重要的概念，也可以说Optional出现在iOS开发中的任何地方。
 * Swift使用optional来表示值可能缺失的情况，optional代表着两种可能性，如果存在值，那么可以**unwrap the optional**去获取值，或者不存在值，即为nil。
 
-##### 产生optional
+#### 产生optional
 
 * 通过赋予可选变量特殊值nil来表示其没有值。
 
@@ -149,7 +151,7 @@ print("Hello \(text)")
   var answer: String?
   ```
 
-##### unwrap the optional
+#### unwrap the optional
 
 * 使用感叹号！去强制解析
 
@@ -222,7 +224,7 @@ switch x {
   // 输出red
   ```
 
-#### 数组
+### 数组
 
 ```swift
 /// 创建空数组
@@ -238,13 +240,13 @@ for item in shoppingList {
 // Milk
 ```
 
-#### 字典
+### 字典
 
 ```swift
 var parameters: [String: String] = "cardNumber : 71115414"
 ```
 
-#### Enum + switch
+### Enum + switch
 
 * Swift中可以定义枚举来关联任意类型的关联值
 
@@ -285,7 +287,7 @@ case .sex(let sex):
 }
 ```
 
-#### 函数
+### 函数
 
 * 返回箭头->表明所返回的类型
 
@@ -323,7 +325,7 @@ func greet(person: String) -> String {
 
 * 函数类型、函数作为参数、嵌套函数等等
 
-#### *闭包(Closure)
+### *闭包(Closure)
 
 * 闭包是自包含的函数代码块，可以在代码中被传递和使用。是Objc中blocks的演变，也类似其他语言中的lambda表达式(匿名函数)。
 
@@ -367,7 +369,7 @@ func greet(person: String) -> String {
   var doubleNumbers = numbers.map { $0 * 2 }
   ```
 
-#### 类与结构体(class && struct)
+### 类与结构体(class && struct)
 
 * 相信大家都有OOP的经验，主要强调类与结构体的差别。
 
@@ -386,9 +388,9 @@ func greet(person: String) -> String {
       }
   ```
 
-#### *协议、扩展、代理(protocol、extension、delegate)
+### *协议、扩展、代理(protocol、extension、delegate)
 
-##### 协议(protocol)
+#### 协议(protocol)
 
 * 类似于java的interface？ 
 * 定义了一个蓝图，规定了用来实现某一特定任务或者功能的方法、属性。
@@ -407,7 +409,7 @@ class Person {
 }
 ```
 
-##### 代理(delegate)
+#### 代理(delegate)
 
 * 代理模式，即将一个对象的一部分功能委托给其他类型的实例。
 
@@ -447,7 +449,7 @@ class Person {
   // 将日志保存到mysql数据库中
   ```
 
-##### 扩展(extension)
+#### 扩展(extension)
 
 - 可以使已有类型遵循并符合协议。
 
@@ -464,7 +466,7 @@ extension ViewController: UITextFieldDelegate {
 
 
 
-## 开发模式
+# 开发模式
 
 * 按UI设计划分
   1. xib/Storyboard党
@@ -473,7 +475,7 @@ extension ViewController: UITextFieldDelegate {
   1. MVC
   2. MVVM
 
-### Storyboard
+## Storyboard
 
 * 是多个xib(界面布局文件)的集合。
 
@@ -483,7 +485,7 @@ extension ViewController: UITextFieldDelegate {
 * 纯代码布局，容易复用，且容易批量调整。
 * **用Storyboard大概是一时爽吧….即短期开发出一个demo使用storyboard很快**
 
-### AutoLayout
+## AutoLayout
 
 * iOS开发中描述性的布局方式，同时也是处理适配手机屏幕的主要方式之一(搭配SizeClass)
 * 掌握AutoLayout更多是经验。
@@ -495,7 +497,7 @@ extension ViewController: UITextFieldDelegate {
 * 可以使用一个空的UIView作为Container作为参照，固定宽高。
 * 要善于使用centerX和centerY作为参照。
 
-### MVC
+## MVC
 
 * 苹果的MVC和传统的MVC有些出入。
 
@@ -523,7 +525,7 @@ extension ViewController: UITextFieldDelegate {
 
   * View与Model之间相互独立，只能通过Controller来相互联系
 
-  ![](images/image_1.jpg)
+  ![](小猴偷米iOS开发技术分享/image_1.jpg)
 
 **在iOS实际开发中，Controller很难和View做到相互独立，经常耦合在一起，即使你可以将一些业务逻辑和数据转换的工作交给Model，但是你无法将负担分给View，因为View本质还是重用的视图，以及将用户的操作行为交给Controller来处理，于是Controller成为了所有东西的delegate和datasource，还要负责网络请求逻辑……..**
 
@@ -531,7 +533,7 @@ extension ViewController: UITextFieldDelegate {
 
 **这次demo还是以苹果所推广的开发模式来编写，即Storyboard + MVC，个人也认为刚接触iOS开发时也应该先熟悉这种开发模式，之后再去上手纯代码布局，MVVM这些操作。**
 
-## CocoaPods构建工程
+# CocoaPods构建工程
 
 #### Single View App的project的初始目录
 
@@ -559,31 +561,31 @@ extension ViewController: UITextFieldDelegate {
 
 * pod install
 
-![](images/image_2.jpg)
+![](小猴偷米iOS开发技术分享/image_2.jpg)
 
 * 打开demo.xcworkspace
 
-## TablebView
+# TablebView
 
 * TableView几乎是iOS开发中最重要的UIView，其继承了UIScollView
 
 * 分为Dynamic和Static
 
-  ![](images/image_3.jpg)
+  ![](小猴偷米iOS开发技术分享/image_3.jpg)
 
 * tableView是由section组成的，每一个section可以拥有一个header和一个footer，和多行rows。
 
 * 每一个row的原型是cell，即tableview以cell为模板，通过复用来构造整个tableview
 
-  ![](images/image_4.jpg)
+  ![](小猴偷米iOS开发技术分享/image_4.jpg)
 
-##### 关联代码与TableView
+## 关联代码与TableView
 
 * TableView提供两个协议，dataSource和delegate
   * delegate用来控制视图如何展示
   * datasource提供cell中的数据
 
-##### delegate核心的三个函数
+## delegate核心的三个函数
 
 * 共多少个sections
 
@@ -613,7 +615,7 @@ extension ViewController: UITextFieldDelegate {
 var repos: [[RepositoryInfo]] = []
 ```
 
-## 总结
+# 总结
 
 * 今天的分享涉及了iOS开发很多方面，但都很浅，最主要的目的就是让大家能有个初步的了解与体会。
 * 现在前端越来越有将移动端"并入"的趋势，事实的确如此，从之前的Web APP，到最近的React Native，包括MVVM，React的思想也是从前端传过来的。但是原生APP开发方式始终有它的优势所在，尤其iOS开发终归要听苹果爸爸的意见。而且React Native最初开发目的其实是给前端的js玩家能够快速迭代开发移动端，而并不是想来"勾引"原生开发者(虽然它做到了….)
@@ -621,7 +623,7 @@ var repos: [[RepositoryInfo]] = []
 * 我觉得扩宽技能树是一方面，但能越早地选择专攻的方向越好，坠好是能找到自己感兴趣的方向。我自己当时学习iOS除了果粉的原因外，主要是自己平日接触时间最长的东西就是手机，觉得从口袋里掏出手机，给别人展示自己写的APP很cool。
 * 找不到兴趣所在，就去搞机器学习吧  : )
 
-#### iOS入门推荐资源
+## iOS入门推荐资源
 
 * Developing iOS11 Apps with Swift(Standford CS193P)   itunes(posts)应该有英文字幕的
 
