@@ -13,7 +13,7 @@ categories: iOS开发
 
 > 其实不敢用iOS入门这样的标题，因为感觉自己也才刚入门(hhh)，所以对这次分享的形式我也有做过一些思考，毕竟自己以前并没有过这样来介绍一个大的工程开发领域的经验。
 >
-> 那么我最后决定是以A Taste Of Developing iOS Application为主题的技术分享，主要是面向对iOS开发、移动端开发有兴趣、无基础的同学。这次分享会让大家对iOS开发有一个大局上的了解，在过程中我会带大家编写一个demo来感觉一下iOS开发是什么样的，所以可能会较广地涉及iOS开发中的各个方面，例如Swift、MVC、Views、Frameworks等等，但不会深，体现了A Taste的主题。
+> 那么我最后决定是以A Taste Of Developing iOS Application为主题的技术分享，主要是面向对iOS开发、移动端开发有兴趣、无基础的同学。这次分享会让大家对iOS开发有一个大局上的了解，在过程中我会带大家编写一个demo来感受一下iOS开发是怎样的。所以可能会较广地涉及iOS开发中的各个方面，例如Swift、MVC、Views、Frameworks等等，但不会深，体现了A Taste的主题。
 >
 > 当然也是和有移动端开发经验的同学们一起交流。最后也会给出我在2017年底这时候，对真正想学习iOS开发的同学的一点入门建议。
 
@@ -29,7 +29,7 @@ categories: iOS开发
 **Core Services**
 
 * 对Core OS层的面向对象封装
-* 包括提供手机位置Core Location，文件访问File Access，网络请求Networking等等服务
+* 包括提供手机位置(Core Location)，文件访问(File Access)，网络请求(Networking)等等服务
 
 **Media**
 
@@ -39,7 +39,7 @@ categories: iOS开发
 ***Cocoa Touch***
 
 * 最顶层，最接近用户，负责iOS的用户界面
-* 一整套完整的框架，包括最核心的Foundation和UIKit，其通过对视图层的控件以及其功能的面向对象封装来提供良好的开发环境，是iOS开发唯一的框架，在macOS开发中称作Cocoa。
+* 一整套完整的框架，包括最核心的Foundation和UIKit，其通过对视图层的控件以及其功能的面向对象封装来提供良好的开发环境，是iOS开发唯一的框架，在MacOS开发中称作Cocoa。
 * 因前身是被苹果公司收购的NeXT公司用Objective-C语言开发的多媒体系统NeXTSTEP的核心软件框架，因此Cocoa框架中的类都有着NS的前缀。
 
 # 开发环境
@@ -50,7 +50,7 @@ categories: iOS开发
 
 * ObjC是对C语言的超集，对其扩充的面向对象编程语言，移动开发火的那几年，ObjC赶上了热潮，就像现在以及可见的未来的人工智能热潮的python。
 * 绝大部分公司的主端核心业务都是ObjC，更别说Cocoa框架是Objc编写，所以ObjC无疑是iOS开发必学的语言。
-* Swift是苹果公司的亲儿子，于2014年推出，甚至在2015年公开了源码，而从2016年Swift3.0推出，愈发稳定，越来越多的公司以及新产品都采用Swift开发，Swift毫无疑问是iOS开发的未来(尽管Swift的发明人跑去谷歌了….
+* Swift是苹果公司的亲儿子，于2014年推出，甚至在2015年公开了源码。2016年Swift3.0推出，愈发稳定，越来越多的公司以及新产品都采用Swift开发，Swift毫无疑问是iOS开发的未来(尽管Swift的发明人跑去谷歌了….
 * 所以现在入门iOS开发，我非常推荐选择学习Swift，这也是苹果官方所推荐的。之后会详细介绍Swift，相信你一定会喜欢上这门语言，而有了Swift基础再去学习ObjC也是非常快的，毕竟其实本质要学习的是Cocoa开发。
 
 **包管理工具:** **CocoaPods** or Carthage or Swift Package Manager
@@ -125,7 +125,7 @@ print("Hello \(text)")
 // Hello Swift
 ```
 
-* Swift的注释支持嵌套
+* Swift的注释支持嵌套，这个的作用就是你可以快速地注释掉大量代码，即使代码已经包含了多行注释。
 
 ### *Optional(可选类型)
 
@@ -277,8 +277,10 @@ enum BodyData {
     case sex(String)
 }
 
+// 关联值180
 let Bob_height = BodyData.height(180)
 
+// 值绑定
 switch Bob_height {
 case .height(let height):
     print(height)
@@ -402,7 +404,7 @@ protocol descriptionProtocol {
   func description() -> String
 }
 
-class Person {
+class Person: descriptionProtocol {
   func description() -> String {
     return ""
   }
@@ -518,18 +520,18 @@ extension ViewController: UITextFieldDelegate {
 
 * View(视图)
 
-  - 视图层，对于iOS来说以UI开头的类基本都属于这层
+  - 视图层，对于iOS来说以**UI开头的类**基本都属于这层
   - 从属于控制器，控制器复用View来实现其展示到屏幕上的功能。
 
 * 关系
 
   * View与Model之间相互独立，只能通过Controller来相互联系
 
-  ![](小猴偷米iOS开发技术分享/image_1.jpg)
+  ![](images/image_1.jpg)
 
-**在iOS实际开发中，Controller很难和View做到相互独立，经常耦合在一起，即使你可以将一些业务逻辑和数据转换的工作交给Model，但是你无法将负担分给View，因为View本质还是重用的视图，以及将用户的操作行为交给Controller来处理，于是Controller成为了所有东西的delegate和datasource，还要负责网络请求逻辑……..**
+**在iOS实际开发中，Controller很难和View做到相互独立，经常耦合在一起，即使你可以将一些业务逻辑和数据转换的工作交给Model，但是你无法将负担分给View，因为View本质还是重用的视图，以及将用户的操作行为交给Controller来处理。于是Controller成为了所有东西的delegate和dataSource，还要负责网络请求逻辑……..**
 
-**所以Massive Controller是iOS开发者不可避免的问题，MVVM的设计模式能很有效地解决这一问题**
+**所以Massive Controller是iOS开发者不可避免的需要面对的问题，MVVM的设计模式能很有效地解决这一问题**
 
 **这次demo还是以苹果所推广的开发模式来编写，即Storyboard + MVC，个人也认为刚接触iOS开发时也应该先熟悉这种开发模式，之后再去上手纯代码布局，MVVM这些操作。**
 
@@ -561,7 +563,7 @@ extension ViewController: UITextFieldDelegate {
 
 * pod install
 
-![](小猴偷米iOS开发技术分享/image_2.jpg)
+![](images/image_2.jpg)
 
 * 打开demo.xcworkspace
 
@@ -569,15 +571,15 @@ extension ViewController: UITextFieldDelegate {
 
 * TableView几乎是iOS开发中最重要的UIView，其继承了UIScollView
 
-* 分为Dynamic和Static
+* 分为**Dynamic**和**Static**
 
-  ![](小猴偷米iOS开发技术分享/image_3.jpg)
+  ![](images/image_3.jpg)
 
 * tableView是由section组成的，每一个section可以拥有一个header和一个footer，和多行rows。
 
 * 每一个row的原型是cell，即tableview以cell为模板，通过复用来构造整个tableview
 
-  ![](小猴偷米iOS开发技术分享/image_4.jpg)
+  ![](images/image_4.jpg)
 
 ## 关联代码与TableView
 
@@ -617,9 +619,9 @@ var repos: [[RepositoryInfo]] = []
 
 # 总结
 
-* 今天的分享涉及了iOS开发很多方面，但都很浅，最主要的目的就是让大家能有个初步的了解与体会。
-* 现在前端越来越有将移动端"并入"的趋势，事实的确如此，从之前的Web APP，到最近的React Native，包括MVVM，React的思想也是从前端传过来的。但是原生APP开发方式始终有它的优势所在，尤其iOS开发终归要听苹果爸爸的意见。而且React Native最初开发目的其实是给前端的js玩家能够快速迭代开发移动端，而并不是想来"勾引"原生开发者(虽然它做到了….)
-* 移动开发现在的确不如前些年火热，甚至有给人"没落"的印象，门槛提高的确是不争的事实，但任何领域都不缺优秀的开发者。
+* 今天的分享涉及了iOS开发很多方面，但都比较浅显，有没有理解到的地方没关系，最主要的目的就是让大家对iOS开发能有个初步的了解与体会。
+* 现在前端越来越有将移动端"并入"的趋势，事实的确如此，从之前的Web APP，到最近的React Native，包括MVVM，而且React的思想也是从前端传过来的。但是原生APP开发方式始终有它的优势所在，尤其是iOS开发终归要听苹果爸爸的意见。React Native最初开发目的其实是给前端的js玩家能够快速迭代开发移动端，而并不是想来"勾引"原生开发者(虽然它做到了….)
+* 移动开发现在的确不如前些年火热，甚至有给人"没落"的印象，门槛提高的确是不争的事实，但任何领域都不缺优秀的开发者。被淘汰，"被饱和"的永远是初级的开发者。
 * 我觉得扩宽技能树是一方面，但能越早地选择专攻的方向越好，坠好是能找到自己感兴趣的方向。我自己当时学习iOS除了果粉的原因外，主要是自己平日接触时间最长的东西就是手机，觉得从口袋里掏出手机，给别人展示自己写的APP很cool。
 * 找不到兴趣所在，就去搞机器学习吧  : )
 
@@ -627,14 +629,14 @@ var repos: [[RepositoryInfo]] = []
 
 * Developing iOS11 Apps with Swift(Standford CS193P)   itunes(posts)应该有英文字幕的
 
-* The Swift Language Guide
+* The Swift Language Guide (Apple官方Swift指导书)
 
-* https://github.com/vsouza/awesome-ios
+* https://github.com/vsouza/awesome-ios (iOS awesome系列)
 
-* https://github.com/matteocrippa/awesome-swift
+* https://github.com/matteocrippa/awesome-swift (swift awesome系列)
 
-* http://swifter.tips
+* http://swifter.tips (王巍大神给swifter的100个tips)
 
-* https://www.boxueio.com
+* https://www.boxueio.com (国产良心iOS开发视频教学资源，收费)
 
   ​
