@@ -146,7 +146,6 @@ print("Hello \(text)")
   let convertedNumber = Int(possibleNumber)
 
   // 赋值为nil表示没有值
-  var serverResponseCode = nil
   // 申明一个可选常量或变量但未赋值，会自动设置为nil
   var answer: String?
   ```
@@ -243,7 +242,7 @@ for item in shoppingList {
 ### 字典
 
 ```swift
-var parameters: [String: String] = "cardNumber : 71115414"
+var parameters: [String: String] = ["cardNumber" : "71115414"]
 ```
 
 ### Enum + switch
