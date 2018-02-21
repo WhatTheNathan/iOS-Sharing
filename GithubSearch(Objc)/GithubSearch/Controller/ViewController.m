@@ -23,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.repos = [NSMutableArray arrayWithCapacity:100];
     [self.repoTableView setDelegate:self];
     [self.repoTableView setDataSource:self];
     [self.repoTextField setDelegate:self];
@@ -48,8 +49,8 @@
         }
         [self.repos removeAllObjects];
         [self.repos addObject:repoSection];
+        NSLog(@"Size: %lu", (unsigned long)[self.repos count]);
         [self updateUI];
-        NSLog(@"here");
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@",error);
     }];
@@ -72,7 +73,6 @@
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"%lu",(unsigned long)[self.repos[section] count]);
     return [self.repos[section] count];
 }
 
