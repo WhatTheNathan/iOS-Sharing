@@ -10,8 +10,11 @@
 
 @interface RepoInfo: NSObject
 @property(nonatomic,copy) NSString *name;
+@property(nonatomic,copy) NSString *description;
 @property(nonatomic,copy) NSURL *detail_url;
 @property(nonatomic,copy) NSURL *image_url;
-@property(nonatomic,copy) NSString *description;
+
++ (RepoInfo *)initWithName: (NSString *) _name detailUrl: (NSURL *) _detailUrl
+                  imageUrl: (NSURL *) _imageUrl Description: (NSString *) _description;
 @end
 

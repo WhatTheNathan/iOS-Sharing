@@ -9,6 +9,7 @@
 #import "RepoInfo.h"
 
 @implementation RepoInfo
+@synthesize description;
 
 + (RepoInfo *)initWithName: (NSString *) _name detailUrl: (NSURL *) _detailUrl
           imageUrl: (NSURL *) _imageUrl Description: (NSString *) _description {
