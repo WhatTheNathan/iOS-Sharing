@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 
-@property (nonatomic,copy) RepoInfo *repoInfo;
+@property (nonatomic,strong) RepoInfo *repoInfo;
 
 - (void) updateUI;
 @end

@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *repoTextField;
 @property (weak, nonatomic) IBOutlet UITableView *repoTableView;
 
-@property (nonatomic, copy) NSMutableArray *repos;
+@property (nonatomic, strong) NSMutableArray *repos;
 @end
 
 @implementation ViewController
@@ -36,7 +36,6 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     [manager GET:url parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        NSLog(@"%@",responseObject);
         NSArray *items = responseObject[@"items"];
         NSMutableArray *repoSection = [NSMutableArray arrayWithCapacity:100];
         for (int i = 0; i < items.count; i++) {
@@ -49,7 +48,7 @@
         }
         [self.repos removeAllObjects];
         [self.repos addObject:repoSection];
-        NSLog(@"Size: %lu", (unsigned long)[self.repos count]);
+//        NSLog(@"Size: %lu", (unsigned long)[self.repos count]);
         [self updateUI];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@",error);
@@ -77,7 +76,6 @@
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    NSLog(@"fuck");
     RepoTableViewCell *cell;
     NSString *cellId= @"repos";
     cell = [tableView dequeueReusableCellWithIdentifier: cellId];
