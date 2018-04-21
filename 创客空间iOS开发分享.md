@@ -610,23 +610,24 @@ var repos: [[RepositoryInfo]] = []
 # 总结
 
 * 今天的分享涉及了iOS开发很多方面，但都比较浅显，有没有理解到的地方没关系，最主要的目的就是让大家对iOS开发能有个初步的了解与体会。
-* 现在前端越来越有将移动端"并入"的趋势，事实的确如此，从之前的Web APP，到最近的React Native，包括MVVM，而且React的思想也是从前端传过来的。但是原生APP开发方式始终有它的优势所在，尤其是iOS开发终归要听苹果爸爸的意见。React Native最初开发目的其实是给前端的js玩家能够快速迭代开发移动端，而并不是想来"勾引"原生开发者(虽然它做到了….)
-* 移动开发现在的确不如前些年火热，甚至有给人"没落"的印象，门槛提高的确是不争的事实，但任何领域都不缺优秀的开发者。被淘汰，"被饱和"的永远是初级的开发者。
-* 我觉得扩宽技能树是一方面，但能越早地选择专攻的方向越好，坠好是能找到自己感兴趣的方向。我自己当时学习iOS除了果粉的原因外，主要是自己平日接触时间最长的东西就是手机，觉得从口袋里掏出手机，给别人展示自己写的APP很cool。
-* 找不到兴趣所在，就去搞机器学习吧  : )
+* 现在大前端越来越有将移动端"并入"的趋势，但是原生APP开发方式始终有它的优势所在，尤其是iOS开发终归要听苹果爸爸的意见。国内iOS开发依旧有需求，就我的面试情况来看，绝大部分公司的主端甚至所有产品都是大量的遗留OC代码，且依旧使用OC开发新功能，少数产品使用OC+Swift混编的方式，极少数甚至只有内部工具使用纯Swift开发。
+* 移动开发现在的确不如前些年火热，甚至有给人"没落"，饱和的印象，门槛提高的确是不争的事实，但任何领域都不会排斥优秀的开发者。被淘汰，"被饱和"的永远是初级的开发者。
+* 可还是要劝退地说，若不是真的拥有极高的兴趣，不应该再选择iOS方向，不过Swift语言的确是值得安利的。
+
+**emmm，一句话概括，若你有兴趣，不用害怕饱和，可若无兴趣，从事其他方向是更好的选择(前端)**
 
 ## iOS入门推荐资源
 
 * Developing iOS11 Apps with Swift(Standford CS193P)   itunes(posts)有英文字幕的
-
 * The Swift Language Guide (Apple官方Swift指导书)
+* [iOS awesome系列](https://github.com/vsouza/awesome-ios)
+* [swift awesome系列](https://github.com/matteocrippa/awesome-swift)
+* [王巍大神给swifter的100个tips](http://swifter.tips)
+* [国产良心iOS开发视频教学资源，收费](https://www.boxueio.com) 
 
-* https://github.com/vsouza/awesome-ios (iOS awesome系列)
+## iOS进阶推荐资源
 
-* https://github.com/matteocrippa/awesome-swift (swift awesome系列)
-
-* http://swifter.tips (王巍大神给swifter的100个tips)
-
-* https://www.boxueio.com (国产良心iOS开发视频教学资源，收费)
-
-  ​
+* 《Advanced Swift》
+* 《OC基础教程》、《OC高级编程》、《Effective OC》
+* 各路大神博客，主推YY大神和Matt的NSHipster
+* 系统性地学习iOS，OC，Swift底层知识，阅读经典第三方库源码
