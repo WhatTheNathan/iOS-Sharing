@@ -15,7 +15,7 @@
 @property (nonatomic, copy) NSURL *detail_url;
 @property (nonatomic, copy) NSURL *image_url;
 
-+ (RepoInfo *)initWithName: (NSString *) _name detailUrl: (NSURL *) _detailUrl
++ (instancetype) initWithName: (NSString *) _name detailUrl: (NSURL *) _detailUrl
                   imageUrl: (NSURL *) _imageUrl Description: (NSString *) _description;
 
 @end

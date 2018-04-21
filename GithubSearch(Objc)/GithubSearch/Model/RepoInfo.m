@@ -11,9 +11,9 @@
 @implementation RepoInfo
 @synthesize description;
 
-+ (RepoInfo *)initWithName: (NSString *) _name detailUrl: (NSURL *) _detailUrl
++ (instancetype) initWithName: (NSString *) _name detailUrl: (NSURL *) _detailUrl
           imageUrl: (NSURL *) _imageUrl Description: (NSString *) _description {
-    RepoInfo *repoInfo = [[RepoInfo alloc]init];
+    RepoInfo *repoInfo = [[RepoInfo alloc] init];
     
     repoInfo.name = _name;
     repoInfo.detail_url = _detailUrl;
